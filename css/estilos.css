@@ -1,14 +1,59 @@
+/* soft resset css*/
+* {
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+
 body {
-    background:  #ccccff;
-    background-size: auto 100vh;
-    font-family: Arial;
+    background-image: url('../img/fundo-sky.jpg'); 
+    /*background: #122932; */
+    background-size: auto;
+    font-family: 'Merriweather', serif;
+    /*height: 100vh; */
+    font-size: 10px;
+  }
+
+ /* dentro do parentese, condicao do if.
+ Se tela tiver pelo menos 400px, vai carregar esses estilos.
+ Sao chamadas de breakpoints.  */ 
+@media (min-width: 400px) {
+    body {
+        font-size: 14px;
+     }
+} 
+  
+header{
     height: 100vh;
-  }
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    /* flex faz todo mundo virar coluna */
+
   .menu {
-    background-color : white; 
+    background-color: whitesmoke; 
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
   }
-  
+      /* fixed: fixo em cima da tela, mesmo outras coisas*/
+      /*z-index fala que nada sobrepoe o menu*/
+
+.menu a{
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 2s, color 0s;
+}
+/*transition em quantos segundos muda a transicao*/
+
+.menu a:active,
+.menu a:hover {
+  background-color: #0A2342;
+  color:white;
+  ;
+}
   .menu ul{ 
     display: flex;
     justify-content: space-around;
@@ -19,21 +64,318 @@ body {
   }
   
   a {
-    color: teal;
+    color:#0A2342;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
   }
   
-  a:hover{
+ /* a:hover{
     text-decoration: underline;
-  }
-  
-  .site-subtitle,
-  .site-title{
-    color:teal;
+  } */
+ /* .title-subtitle{
+    transform: scale(0.3) translatey(50vh);
+    opacity: 0;
+    animation: linear 2s titleAnimator forwards 
+  } */
+  /*criar animacao com @keyframes, funciona com porcentagem da animacao
+  estado inicial considera o padrao.
+  Fowards - para no final ficar no ultimo status 
+  @keyframes titleAnimator {
+    0%{ transform: scale(0.3) translatey(50vh);
+      opacity: 0;
+    }
+    100%{
+      transform: scale(1) translatey(0);
+      opacity:1;
+
+    }
+  }*/
+
+  .title-subtitle{
+    color:white;
     text-align: center;  
+    font-family: 'Roboto', sans-serif;
   }
   
-  .site-subtitle{
+  .site-title {
+    font-size: 4em; 
+  }
+
+  .site-subtitle {
+    font-size: 2em;
     font-style: italic;
   }
+
+  .button{ 
+  border-radius: 25px;
+  background: #73AD21;
+  font-size: 1.2em;
+  margin: auto;
+  padding: 0.5em; 
+  padding-left: 2em;
+  padding-right: 2em;
+ }
+
+  .button:active,
+  .button:hover{
+    background-color: whitesmoke;
+    color: #0A2342;
+  }
+
+
+  .sobre,
+  .contato,
+  .portfolio {
+    background-color: white;
+    color: #0A2342;
+    padding:2em;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  br {
+    display: block;
+    margin: 3em 0;
+    line-height:22px;
+    content:"";
+ }
+
+
+
+
+  .portfolio{
+    background-color:#0A2342;
+    color: white
+  }
+
+
   
+  @media (min-width: 1000px){
+  .sobre,
+  .contato,
+  .portfolio {
+    max-width: 1000px;
+  }
+  }
+  /* margin left e margin right auto*/
+
+  .sobre h2,
+  .portfolio h2 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom:1.4em;
+    font-size: 2em;
+    margin-top: 1em;
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media (min-width:600px){
+    .sobre h2,
+    .portfolio h2 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom:1.4em;
+    font-size: 2em;
+    margin-top: 1em;
+    padding-left: 2em;
+    text-align: left;
+    justify-content: left;
+  }
+}
+
+  .contato h2{
+    font-family: 'Roboto', sans-serif;
+    margin-bottom:1.4em;
+    font-size: 2em;
+    margin-top: 1em;
+  }
+
+  .sobre p{
+    color:#0A2342;
+    text-indent: 1.4em;
+    margin-bottom: 1.4m;
+    text-align: justify;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+
+  .sobre .avatar{
+    float: inline-start;
+    margin-bottom: 1.4em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    }
+
+  @media (min-width:600px) {
+  .sobre .avatar{
+    float: right;
+    margin-bottom: none;
+    margin-left: 4em;
+    margin-right: 4em;
+    width: auto;
+  }
+}
+
+.sobre .avatar img{
+  border-radius: 50%;
+  height: 16em;
+}
+/*border-radius s'o se aplica a img, nao ao figure.
+clip-path: corta com forma geometrica que determino, polygon passar valores  */
+
+.sobre .grid{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: left;
+
+}
+
+.sobre .grid span {
+  padding: 1em 4em;
+}
+
+.sobre .grid strong {
+  text-underline-position: under;
+  color: #0A2342;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4em;
+  border-bottom: #73AD21 2px solid;
+}
+
+
+/*
+.sobre img{
+  height: 70px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}*/
+
+.portfolio .grid{
+    display: grid;
+    gap: 2em;
+}
+
+
+@media(min-width: 600px) {
+    .portfolio .grid{
+    grid-template-columns: 240px 240px;
+    grid-template-rows: 240px 240px ;
+    align-content: center;
+    justify-content: center;
+    }
+}
+
+
+  /* texto alinhado junto com imagem no centro*/
+  .portfolio figure {
+      text-align: center;
+  }
+  
+  .img-portfolio {
+      height:16em;
+      width:100%;
+      object-fit: cover;
+      object-position: left bottom;
+      transition: trasform 500ms;
+  }
+/* transform tem algumas transformacao no elemento, no caso escale muda a escala do tamanho da imagem, escala inicial sempre e 1*/
+
+/*  .img-portfolio:hover {
+    transform: scale(1.2);
+  }
+  @media (min-width: 1200px) {
+      .img-portfolio {
+          height: auto;
+          width: 100%;
+      }
+  } */
+
+  .flip-card {
+    height: 16em;
+    perspective: 1000px;
+
+  }
+
+  @media(min-width: 600px) {
+    .flip-card{
+      height: 16em;
+      perspective: 500px;
+    }
+}
+/* perspective- quao pert usuario esta */
+
+
+  .flip-card:hover .card {
+    transform: rotatey(180deg);
+  }
+
+  .card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 3s;
+  }
+/*posicao e relativa.
+transform style coloca a animacao 3d na mudanca do card.
+a transformacao vai ser em 1s*/
+
+  .card-front,
+  .card-back {
+    backface-visibility: hidden;
+    left: 0;
+    position:absolute;
+    top: 0;
+    width: 100%
+  }
+ /*backface visibility tira a */
+
+.card-front h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+  .card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    color: #0A2342;
+    height: 16em;
+    width: 100%;
+    transform: rotatey(180deg);
+  }
+
+  /*.card:hover {
+    transform: rotatey(180deg);
+  } */
+/* aqui tbm precisa da rotacao, esta comentada porque passou para a flip-card. */
+
+
+  .card-back ul {
+    margin: 2em;
+    justify-content: center;
+  }
+  .contato {
+    text-align: center;
+    color: #0A2342;
+    min-height: 30vh;
+
+  }
+  .contato a {
+    font-size: 4em;
+    transition: text-shadow 1s;
+
+  }
+  .contato a:active,
+  .contato a:hover{
+    text-decoration: none;
+    text-shadow: 0px 0px 10px #73AD21 ;
+
+  }
+  /* active, quando clica no elemento, dai no toast do cel funciona da mesma maneira*/

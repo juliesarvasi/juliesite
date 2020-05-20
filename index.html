@@ -1,22 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julie Sarvasi</title>
-    <link href="css/estilos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julie Sarvasi</title>
+  <link href="css/estilos.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Roboto:ital,wght@0,400;1,300&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/cda4050e7e.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <nav class="menu">
-          <ul>
-            <li><a href = "#">Sobre</a></li>
-            <li><a href = "#">Portofolio</a></li>
-            <li><a href = "#">Contato</a></li>
-          </ul>
-        </nav>
-        <h1 class = "site-title">Julie Costa</h1>
-        <h2 class = "site-subtitle">Product Owner</h2>
-    </header>
+
+<body >
+  <header id="home">
+    <nav class="menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">About me</a></li>
+        <li><a href="#portfolio">Knowledge</a></li>
+        <li><a href="#contato">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="title-subtitle">
+      <h1 class="site-title">Julie Costa</h1>
+      <h2 class="site-subtitle">Product Owner | UX & Front-end enthusiast</h2>
+      <p>
+        <br>
+        <a class="button" href="#portfolio">Find More</a>
+      </p>
+    </div> 
+  </header>
+  </div>
+  <section class="sobre" id="sobre">
+    <h2>About me</h2>
+
+    <figure class="avatar">
+      <img
+        src="./img/perfil.jpg"
+        alt="Julie Costa">
+    </figure>
+    <h1> 
+    </h1>
+    <p>I'm a 24 years old brasilian woman<b> passionate about ideas, technology and people</b>. 
+    </p>
+    <p>I'm graduated in <b>Business Administration</b> from Fundação Getulio Vargas (FGV) with focus in sustainability. I discovered the product an technology word in 2017 working in EasyTaxi, a mobility startup in Brasil. <b>I migrate to project from product and started my carrer with technology in 2019.</b> 
+    </p>
+    <p>Working for 3 years in mobility startups, my passion for product has growth and I decided to work as a Product Onwer after an year working with Market Fit. I understood that be a Product Onwer is a hard work and that I had gaps and <b>curiosity in Design and Technology</b>, so I decided to do courses to improve my knowloge of these areas.
+      This website was created during a Aluma Css workshop where I could learn more about front-end. 
+    </p>
+    <p> Below I tell more about my work experiences:
+    </p>
+    <br>
+    <div class="grid">
+        <span> <strong>Company</strong></span>
+        <span> <strong>Experience</strong></span>
+       <span class="experience">Turbi</span>
+       <span class="description">Product Owner</span>
+        <span class="experience">EasyTaxi & Cabify</span>
+        <span class="description">Product Market Fit </span>
+        <span class="experience">EasyTaxi</span>
+        <span class="description">Project Analyst</span>
+    </div>
+  </section>
+  <section class="portfolio" id="portfolio">
+    <h2>Knowledges</h2>
+
+    <div class="grid">
+
+      <div class="flip-card">
+        <div class="card">
+          <figure class="card-front">
+            <img class="img-portfolio" src="./img/fundo-sky.jpg" 
+            alt="Business">
+            <h3>Business</h3>
+          </figure>
+          <div class="card-back">
+            <ul> 
+              <li>Graduated in Business Administration in 2017.</li>
+              <li>Startup and Agile mindset.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="card">
+          <figure class="card-front">
+            <img class="img-portfolio" src="./img/fundo-sky.jpg" 
+            alt="Product">
+            <h3>Product</h3>
+          </figure>
+          <div class="card-back">
+            <ul> 
+              <li>Product Management Course PM3 - in progress.</li>
+              <li>1 year and 7 months as Product Market Fit.</li>
+              <li>1 year working as Product Owner.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="card">
+          <figure class="card-front">
+            <img class="img-portfolio" src="./img/fundo-sky2.jpg"
+              alt="UX">
+              <h3>UX</h3>
+          </figure>
+          <div class="card-back">
+            <ul> 
+              <li>Tera UX Course - 2019.</li>
+              <li>Product Discovery and User research-  2017 to now.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="card">
+          <figure class="card-front">
+            <img class="img-portfolio" src="./img/fundo-sky2.jpg"
+              alt="Front-end">
+            <h3>Front-end</h3>
+          </figure>
+          <div class="card-back">
+            <ul> 
+              <li>Alura Css and Html classes - 2020.</li>
+              <li>Currently studying Front-end in Alura.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+
+  <section class="contato" id="contato">
+    <h2>Contact</h2>
+    <div class="grid icons">
+      <a target="_blank" href="https://github.com/juliesarvasi">
+        <i class="fab fa-github"></i>
+      </a>
+      <a target="_blank" href="https://linkedin.com/in/julie-sarvasi">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:juliesarvasi@gmail.com">
+        <i class="fas fa-envelope-square"></i>
+      </a>
+    </div>
+  </section>
 </body>
+
 </html>
